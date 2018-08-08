@@ -1,0 +1,43 @@
+<div class="nav-buttons" *ngIf="!logged ">
+  <a class="btn btn-lg btn-dark margin" routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a>
+  <a class="btn btn-lg btn-dark margin" routerLink="/register"><i class="fa fa-user-plus"></i>&nbsp;Register</a>
+</div>
+
+<div class="nav-buttons" *ngIf="logged ">
+  <a class="btn btn-dark margin" routerLink="/profile"><i class="fa fa-user"></i>&nbsp;Profile</a>
+  <a class="btn btn-danger" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
+</div>
+
+
+<div *ngIf="logged ">
+  <h2> Enrolled Courses</h2>
+  <div class="row">
+    <div *ngFor="let course of enrolledCourses" class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{course.title}}</h5>
+          <a routerLink="/course/{{course.id}}"
+             class="btn btn-dark margin"><i class="fa fa-eye"></i>&nbsp;View Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<h2>Course Grid ({{courses.length}})</h2>
+
+<div class="row">
+  <div *ngFor="let course of courses" class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{course.title}}</h5>
+        <a routerLink="/course/{{course.id}}"
+           class="btn btn-success"><i class="fa fa-eye"></i>&nbsp;View Course</a>
+        <a (click)="enroll(course.id)"
+           class="btn btn-primary"><i class="fas fa-book"></i>&nbsp;Sections</a>
+      </div>
+    </div>
+  </div>
+</div>
