@@ -1,9 +1,9 @@
 export class SectionServiceClient {
 
-  SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
+  SECTION_URL = 'https://secure-coast-10881.herokuapp.com/api/course/COURSEID/section';
 
   findSectionsForStudent() {
-    const url = 'http://localhost:4000/api/student/section';
+    const url = 'https://secure-coast-10881.herokuapp.com/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -12,7 +12,7 @@ export class SectionServiceClient {
 
   enrollStudentInSection(sectionId) {
     console.log("In enroll client");
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = 'https://secure-coast-10881.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -20,7 +20,7 @@ export class SectionServiceClient {
   }
 
   unrollStudentInSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = 'https://secure-coast-10881.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'delete',
       credentials: 'include'
@@ -34,7 +34,7 @@ export class SectionServiceClient {
 
   findCourseById(courseId)
   {
-    return fetch('http://localhost:4000/api/course/'+courseId)
+    return fetch('https://secure-coast-10881.herokuapp.com/api/course/'+courseId)
       .then(response => response.json());
   }
 
@@ -50,14 +50,14 @@ export class SectionServiceClient {
     });
   }
   deleteSection(sectionId) {
-    return fetch('http://localhost:4000/api/section' + '/' + sectionId, {
+    return fetch('https://secure-coast-10881.herokuapp.com/api/section' + '/' + sectionId, {
       method: 'delete'
     });
   }
 
   updateSection(sectionId, newName, newMax, newRem) {
     const section = {id : sectionId, newName: newName, newMax: newMax, newRem: newRem};
-    return fetch('http://localhost:4000/api/section' + '/' + sectionId, {
+    return fetch('https://secure-coast-10881.herokuapp.com/api/section' + '/' + sectionId, {
       method: 'put',
       body: JSON.stringify(section),
       credentials: 'include',
