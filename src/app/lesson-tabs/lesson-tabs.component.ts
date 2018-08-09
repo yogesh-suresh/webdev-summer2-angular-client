@@ -24,15 +24,14 @@ export class LessonTabsComponent implements OnInit {
     this.courseId = params['courseId'];
     this.moduleId = params['moduleId'];
     this.lessonId = params['lessonId'];
-    this.loadLessons(this.moduleId, this.courseId);
+    if (this.courseId != null && this.moduleId != null){
+    this.loadLessons(this.moduleId, this.courseId);}
 
   }
 
   loadLessons(moduleId, courseId) {
     this.moduleId = moduleId;
     this.courseId = courseId;
-    console.log("In lesson component.ts:"+courseId);
-    console.log("IN lesson component.ts:"+moduleId);
     this.service.findLessonsForModule(moduleId,courseId)
       .then(lessons => this.lessons = lessons);
 

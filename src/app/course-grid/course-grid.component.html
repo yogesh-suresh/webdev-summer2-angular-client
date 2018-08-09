@@ -1,11 +1,11 @@
 <div class="nav-buttons" *ngIf="!logged ">
-  <a class="btn btn-dark margin" routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a>
-  <a class="btn btn-dark margin" routerLink="/register"><i class="fa fa-user-plus"></i>&nbsp;Register</a>
+  <a class="btn btn-dark margin" routerLink="/login">&nbsp;Login</a>
+  <a class="btn btn-dark margin" routerLink="/register">&nbsp;Register</a>
 </div>
 
 <div class="nav-buttons" *ngIf="logged ">
-  <a class="btn btn-dark margin" routerLink="/profile"><i class="fa fa-user"></i>&nbsp;Profile</a>
-  <a class="btn btn-danger" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a>
+  <a class="btn btn-dark margin" routerLink="/profile">&nbsp;Profile</a>
+  <a class="btn btn-danger" (click)="logout()">&nbsp;Logout</a>
 </div>
 
 

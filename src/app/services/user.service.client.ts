@@ -1,10 +1,10 @@
-import {promise} from 'selenium-webdriver';
-import rejected = promise.rejected;
+// import {promise} from 'selenium-webdriver';
+// import rejected = promise.rejected;
 
 export class UserServiceClient {
 
   findUserById(userId) {
-    return fetch('http://localhost:4000/api/user/' + userId)
+    return fetch('https://secure-coast-10881.herokuapp.com/api/user/' + userId)
       .then(response => response.json());
   }
 

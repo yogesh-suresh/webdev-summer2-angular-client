@@ -26,10 +26,11 @@ export class TopicPillsComponent implements OnInit {
     this.moduleId = params['moduleId'];
     this.lessonId = params['lessonId'];
     this.topicId = params['topicId'];
-    this.loadTopics(this.lessonId,this.moduleId,this.courseId,);
+    if(this.lessonId != null && this.moduleId != null && this.topicId != null ){
+    this.loadTopics(this.lessonId, this.moduleId, this.courseId); }
   }
 
-  loadTopics(lessonId,moduleId,courseId) {
+  loadTopics(lessonId, moduleId, courseId) {
     this.moduleId = moduleId;
     this.courseId= courseId;
     this.lessonId = lessonId;
