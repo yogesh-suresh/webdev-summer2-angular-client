@@ -20,7 +20,8 @@ export class WidgetListComponent implements OnInit {
   setParams(params) {
     this.context = params;
     this.topicId = params['topicId'];
-    this.loadWidgets(this.topicId);
+    if(this.topicId !== undefined){
+    this.loadWidgets(this.topicId);}
   }
   loadWidgets(topicId) {
     this.service.findWidgetsForTopic(topicId)
