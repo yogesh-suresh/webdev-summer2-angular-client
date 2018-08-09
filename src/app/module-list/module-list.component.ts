@@ -22,7 +22,7 @@ export class ModuleListComponent implements OnInit {
   setParams(params) {
     this.courseId = params['courseId'];
     this.moduleId = params['moduleId'];
-    if (this.courseId != null) {
+    if (this.courseId !== undefined) {
     this.loadModules(this.courseId);}
   }
 
