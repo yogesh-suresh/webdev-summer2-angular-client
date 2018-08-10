@@ -23,8 +23,6 @@ export class SectionListComponent implements OnInit {
 
   loadSections(courseId) {
     this.courseId = courseId;
-    this.service.findCourseById(this.courseId)
-      .then(course=>this.course=course);
     this
       .service
       .findSectionsForCourse(courseId)
@@ -33,7 +31,7 @@ export class SectionListComponent implements OnInit {
 
 
   enroll(section) {
-    // alert(section._id);
+
     if(section.seats==0)
     {
       alert("Sorry this section is closed");
@@ -42,15 +40,15 @@ export class SectionListComponent implements OnInit {
       this.service
         .enrollStudentInSection(section._id)
         .then((enrollment) => {
-          this.nav(enrollment);
-          // this.router.navigate(['profile']);
+          // this.nav(enrollment);
+          this.router.navigate(['profile']);
         });
     }
   }
 
   nav(enrollment)
   {
-    console.log("IN SECTION ENROLL:"+enrollment.student);
+
     this.router.navigate(['profile']);
   }
 
