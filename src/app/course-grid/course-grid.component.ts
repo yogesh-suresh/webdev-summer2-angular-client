@@ -62,7 +62,8 @@ export class CourseGridComponent implements OnInit {
 
     this.userService.profile()
       .then(res => {
-          return res._id;
+          if(res !== null){
+          return res._id;}
         }
       ).then(userId => {
       if (userId !== null) {

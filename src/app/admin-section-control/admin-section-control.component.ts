@@ -27,15 +27,20 @@ export class AdminSectionControlComponent implements OnInit {
   course;
   sections = [];
   selectedSection :Section;
+
   loadSections(courseId) {
     this.courseId = courseId;
-    this.courseservice.findCourseById(this.courseId)
-      .then(course=>this.course=course);
-    this
-      .service
-      .findSectionsForCourse(courseId)
-      .then(sections => this.sections = sections).then(() => {this.sectionName = "";
-      this.maxSeats = "";});
+    if(this.courseId !== undefined) {
+      this.courseservice.findCourseById(this.courseId)
+        .then(course => this.course = course);
+      this
+        .service
+        .findSectionsForCourse(courseId)
+        .then(sections => this.sections = sections).then(() => {
+        this.sectionName = "";
+        this.maxSeats = "";
+      });
+    }
   }
 
   deleteSection(sectionId) {
