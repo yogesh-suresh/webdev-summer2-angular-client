@@ -23,10 +23,11 @@ export class SectionListComponent implements OnInit {
 
   loadSections(courseId) {
     this.courseId = courseId;
+    if(this.courseId !== undefined){
     this
       .service
       .findSectionsForCourse(courseId)
-      .then(sections => this.sections = sections);
+      .then(sections => this.sections = sections);}
   }
 
 
@@ -40,16 +41,9 @@ export class SectionListComponent implements OnInit {
       this.service
         .enrollStudentInSection(section._id)
         .then((enrollment) => {
-          // this.nav(enrollment);
           this.router.navigate(['profile']);
         });
     }
-  }
-
-  nav(enrollment)
-  {
-
-    this.router.navigate(['profile']);
   }
 
   ngOnInit() {

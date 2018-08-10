@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   check_login(credentials)
   {
     if(credentials.user=="Invalid User" || this.password==undefined || this.username==undefined)
-      alert('Enter Correnct Credentials');
+      alert('Enter Correct Credentials');
     else if(credentials.username== "admin")
       this.router.navigate(['user-admin']);
     else
