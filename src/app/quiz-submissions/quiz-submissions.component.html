@@ -1,0 +1,46 @@
+
+<div class="container-fluid">
+  <h2>Submissions</h2>
+  <table class="table table-bordered">
+    <tr>
+
+      <th>Username <input [(ngModel)]="selectUsername"
+                          placeholder="username"
+                          class="form-control"></th>
+      <th>Submitted on</th>
+      <th>Answers;</th>
+
+    </tr>
+
+    <tr *ngFor="let submission of submissions">
+      <td *ngIf="selectUsername !== '' && selectUsername === submission.student.username">
+
+        <h6>{{submission.student.username}} </h6></td>
+      <td *ngIf="selectUsername !== '' && selectUsername === submission.student.username">
+        <h6> Date:- {{submission.updatedAt.split('T')[0]}} / Time:-  {{submission.updatedAt.split('T')[1]}} </h6>
+      </td>
+      <td *ngIf="selectUsername !== '' && selectUsername === submission.student.username">
+        <a routerLink="/quiz/{{submission.quiz}}/submission/{{submission._id}}">
+         <button class="btn btn-primary">View</button>
+        </a>
+      </td>
+    </tr>
+
+
+    <tr *ngFor="let submission of submissions">
+      <td *ngIf="selectUsername == ''"  >
+
+        <h6>{{submission.student.username}} </h6></td>
+      <td *ngIf="selectUsername == ''  ">
+        <h6> Date:- {{submission.updatedAt.split('T')[0]}} / Time:-  {{submission.updatedAt.split('T')[1]}} </h6>
+      </td>
+      <td *ngIf="selectUsername == ''  ">
+        <a routerLink="/quiz/{{submission.quiz}}/submission/{{submission._id}}">
+          <button class="btn btn-primary">View</button>
+        </a>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
