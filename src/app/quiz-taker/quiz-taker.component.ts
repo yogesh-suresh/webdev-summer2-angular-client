@@ -43,7 +43,7 @@ export class QuizTakerComponent implements OnInit {
                   .submitQuiz(submission.questions,this.quiz,this.studentId)
                   .then(sub => console.log(sub));
           }
-    }
+    })
   }
   ngOnInit() {
   }

@@ -24,6 +24,7 @@ export class QuizSubmissionsComponent implements OnInit {
   submissions = [];
   selectUsername = '';
   studentId = '';
+
   loadSubmissions(quizId) {
     this.quizId = quizId;
     this.userService.profile()
@@ -43,7 +44,7 @@ export class QuizSubmissionsComponent implements OnInit {
                 .then(submissions => { console.log(submissions);
                   this.submissions = submissions});
         }
-       }
+       })
   }
 
   ngOnInit() {

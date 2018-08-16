@@ -8,7 +8,7 @@ export class QuizServiceClient {
   submitQuiz(sub,quiz,sId) {
     const submission ={
       quiz: quiz,
-      student: sId
+      student: sId,
       answers: sub
     };
     console.log(submission);
