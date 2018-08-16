@@ -22,7 +22,9 @@ export class QuizAnswersComponent implements OnInit {
 
   studentId = '';
   quizId = '';
-  quiz = {};
+  quiz = {"title" : '',
+          "questions":[]
+  };
   submission = {};
   questions ={};
   loadSubmission(quizId,submissionId) {
