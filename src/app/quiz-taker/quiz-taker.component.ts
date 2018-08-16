@@ -22,7 +22,9 @@ export class QuizTakerComponent implements OnInit {
 
   studentId = '';
   quizId = '';
-  quiz = {};
+  quiz = {"title" : '',
+          "questions":[]
+  };
   submission = {};
   loadQuiz(quizId) {
     this.quizId = quizId;
