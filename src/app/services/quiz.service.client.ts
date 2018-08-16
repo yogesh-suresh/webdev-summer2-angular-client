@@ -37,7 +37,7 @@ export class QuizServiceClient {
       .then(response => response.json());
   }
 
-findQuestionById(qId) {
+  findQuestionById(qId) {
     return fetch('https://secure-coast-10881.herokuapp.com/api/question/' + qId)
       .then(response => response.json());
   }

@@ -23,7 +23,7 @@ export class QuizSubmissionsComponent implements OnInit {
   quizId = '';
   submissions = [];
   selectUsername = '';
-  studentId = ''
+  studentId = '';
   loadSubmissions(quizId) {
     this.quizId = quizId;
     this.userService.profile()
