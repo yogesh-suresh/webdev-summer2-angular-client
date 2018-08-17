@@ -27,6 +27,16 @@ export class QuizAnswersComponent implements OnInit {
   };
   submission = {};
   questions ={};
+  answer = {
+    "fillBlanksAnswers":{
+            "variable": '',
+            "value": ''
+        },
+        "multipleChoiceAnswer": '',
+        "trueFalseAnswer": '',
+        "essayAnswer":''
+
+  };
   loadSubmission(quizId,submissionId) {
     console.log(submissionId);
     this.quizId = quizId;
@@ -35,6 +45,10 @@ export class QuizAnswersComponent implements OnInit {
       .then(quiz => {
       console.log(quiz);
       this.quiz = quiz});
+    this.service
+      .findSubmission(submissionId)
+      .then(answer => this.answer = answer.answers);
+      console.log(this.answer);
   }
 
 
