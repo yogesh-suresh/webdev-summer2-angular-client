@@ -61,20 +61,22 @@ export class CourseGridComponent implements OnInit {
 
 
     this.userService.profile()
-      .then(res => {
-          if(res !== null){
-          return res._id;}
-        }
-      ).then(userId => {
-      if (userId !== null) {
+      .then(user => {
+        if (user === null){
+         console.log('Please Log in');
+         }
+        else
+         {
         this.logged = true;
         this.sectionService
           .findSectionsForStudent()
           .then(sections =>
             this.enrolledSections = sections)
           .then(this.findEnrolledCourses);
-      }
+         }
     });
+
+
   }
 
 }
