@@ -27,7 +27,7 @@ export class QuizAnswersComponent implements OnInit {
   };
   submission = {};
   questions ={};
-  answer = {
+  answer = [{
     "fillBlanksAnswers":{
             "variable": '',
             "value": ''
@@ -36,7 +36,7 @@ export class QuizAnswersComponent implements OnInit {
         "trueFalseAnswer": '',
         "essayAnswer":''
 
-  };
+  }];
   loadSubmission(quizId,submissionId) {
     console.log(submissionId);
     this.quizId = quizId;
