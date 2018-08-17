@@ -44,7 +44,7 @@ export class QuizTakerComponent implements OnInit {
                   this.service
                   .submitQuiz(submission.questions,this.quiz,this.studentId)
                   .then(sub => console.log(sub));
-                  alert('Submission is sucessful;);
+                  alert('Submission is successful');
                   this.router.navigate(['quizzes']);
           }
     })
