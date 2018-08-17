@@ -37,13 +37,15 @@ export class QuizTakerComponent implements OnInit {
     this.userService.profile()
       .then(user => {
         if (user === null) {
-          alert('Session timed out');
+          alert('Please log in !! Session timed out');
            this.router.navigate(['login']);
         } else {  console.log(submission.questions);
                   this.studentId = user._id;
                   this.service
                   .submitQuiz(submission.questions,this.quiz,this.studentId)
                   .then(sub => console.log(sub));
+                  alert('Submission is sucessful;);
+                  this.router.navigate(['quizzes']);
           }
     })
   }
